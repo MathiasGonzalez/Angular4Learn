@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Angular 4 Learn</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <!--<ion-card>
+        <ion-card-header>
+            {{ ViewModel?.title }}
+        </ion-card-header>-->
+
+        <ion-list>
+            <!--<button ion-item (click)="checkNetwork()">            
+                {{networkState}}
+                <ion-icon name="jet" item-right></ion-icon>              
+                <img style="height:32px;width:32px" src="assets/icon/icon.png" item-right>               
+            </button>-->
+
+            <button *ngFor="let item of barrels" (click)="goToTab(1,item)" ion-item>
+                <!--<ion-icon name="logo-angular" item-left></ion-icon>-->
+                <span class="item-name">{{item}}</span>
+                <!--<ion-img cache="true" width="32" height="32" src="assets/icon/icon.png"></ion-img>-->
+                <img style="height:32px;width:32px" src="assets/icon/icon.png" item-right>    
+            </button>
+
+        </ion-list>
+
+    <!--</ion-card>-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

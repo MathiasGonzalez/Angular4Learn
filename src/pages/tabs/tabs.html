@@ -1,0 +1,5 @@
+<ion-tabs #tabs>
+  <ion-tab [root]="tab1Root" [rootParams]="rootParams" tabTitle="Barrels"  tabBadge="3" tabBadgeStyle="danger" tabIcon="cube"></ion-tab>
+  <ion-tab #tab2 [root]="tab2Root" (ionSelect)="tab2RootSelected(tab2)"  [rootParams]="rootParams"  tabTitle="Apis" tabIcon="code"></ion-tab>
+  <ion-tab #tab3 [root]="tab3Root" (ionSelect)="tab2RootSelected(tab2)" [rootParams]="rootParams" tabTitle="Info" tabIcon="code-working" ></ion-tab>
+</ion-tabs>

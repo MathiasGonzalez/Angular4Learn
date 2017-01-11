@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Api Definitions
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar 
+      [(ngModel)]="searchTerm" 
+      [showCancelButton]="true" 
+      (ionInput)="onInput($event)" 
+      (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  <ion-list>
+
+    <ion-list-header>{{barrel}}</ion-list-header>
+
+    <!--<ion-item >-->
+    
+    <button *ngFor="let item of items" (click)="selection(item)" ion-item>
+        <!--<ion-icon name="{{ getIcon(item) }}" item-left></ion-icon>-->
+        
+         
+         <span [ngClass]="[getStabilityClasss(item)]" >{{ item?.stability}}</span>
+         {{item?.title}} 
+         <span class="symbol {{ item?.docType}}" item-right>{{item?.docType}}</span>
+    </button>
+    <!--</ion-item>-->
+
+  </ion-list>
+</ion-content>

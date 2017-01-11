@@ -1,0 +1,8 @@
+<ion-title>WEB</ion-title>
+<ion-content>
+    <iframe *ngIf="!!definition" 
+        [src]="getUrl()" 
+        frameborder="0" 
+        allowfullscreen 
+        style="height: 100%;width: 100%;"></iframe>
+</ion-content>
